@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">News App</string>
+    <string name="tools_article_title">Melbourne, na Austrália, volta a decretar confinamento contra o
+        coronavírus - G1</string>
+    <string name="tools_article_desc">Medidas de restrição na circulação na cidade do estado de
+        Victoria deve durar pelo menos seis semanas.Medidas de restrição na circulação na cidade do estado de Victoria deve durar pelo menos seis semanas.Medidas de restrição na circulação na cidade do estado de Victoria deve durar pelo menos seis semanas.</string>
+    <string name="welcome_quiz">Welcome to the Brazil Quiz!</string>
+    <string name="play_btn">play</string>
+    <string name="img_desc">Brazil flag with question marks</string>
+    <string name="doneBtn">done</string>
+    <string name="answer">Answer</string>
+</resources>

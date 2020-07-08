@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/rvQuestion">
+
+    <fragment
+        android:id="@+id/rvQuestion"
+        android:name="com.example.newsapp.main.MainNewsFragment"
+        android:label="main_news_fragment"
+        tools:layout="@layout/article_item" >
+    </fragment>
+</navigation>
