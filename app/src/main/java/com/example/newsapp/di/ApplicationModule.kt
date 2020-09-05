@@ -8,6 +8,7 @@ import com.example.newsapp.data.repository.ArticlesRepository
 import com.example.newsapp.data.repository.IArticlesRepository
 import com.example.newsapp.data.usecases.ArticlesUseCases
 import com.example.newsapp.data.usecases.IArticlesUseCases
+// import com.example.newsapp.work.ChildWorkerFactory
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
@@ -54,6 +55,13 @@ object ApplicationModule {
 
         return builder.build()
     }
+
+//    @JvmStatic
+//    @Singleton
+//    @Provides
+//    fun provideChildWorkerFactory(childWorkerFactory: ChildWorkerFactory?): ChildWorkerFactory? {
+//        return childWorkerFactory
+//    }
 }
 
 @Module

@@ -3,12 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/navigation"
-    app:startDestination="@id/rvQuestion">
+    app:startDestination="@id/mainNewsFragment">
 
     <fragment
-        android:id="@+id/rvQuestion"
+        android:id="@+id/mainNewsFragment"
         android:name="com.example.newsapp.main.MainNewsFragment"
         android:label="main_news_fragment"
         tools:layout="@layout/article_item" >
+        <action
+            android:id="@+id/action_mainNewsFragment_to_chipFragment"
+            app:destination="@id/chipFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/chipFragment"
+        android:name="com.example.newsapp.chips.ChipFragment"
+        android:label="ChipFragment" />
 </navigation>

@@ -5,14 +5,12 @@ import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
 import retrofit2.HttpException
 
-class RefreshDataWorker(
+class RefreshDataWorker constructor(
+//    private val useCases: ArticlesUseCases,
     appContext: Context,
     params: WorkerParameters
 ) :
     CoroutineWorker(appContext, params) {
-//    TODO: Implement Worker
-//    @Inject
-//    lateinit var useCases: CluesUseCases
 
     override suspend fun doWork(): Result {
 //        Timber.d(">>>>Injetado:$useCases")
@@ -23,6 +21,15 @@ class RefreshDataWorker(
             Result.retry()
         }
     }
+
+//    class Factory @Inject constructor(
+//        private val useCases: ArticlesUseCases
+//    ): ChildWorkerFactory {
+//
+//        override fun create(appContext: Context, params: WorkerParameters): RefreshDataWorker {
+//            return RefreshDataWorker(useCases, appContext, params)
+//        }
+//    }
 
     companion object {
         const val WORK_NAME = "RefreshDataWorker"

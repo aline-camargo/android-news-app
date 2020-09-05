@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#0957C5</color>
-    <color name="colorPrimaryDark">#3700B3</color>
-    <color name="colorAccent">#03DAC5</color>
-    <color name="buttonColor">#4CAF50</color>
-    <color name="textColor">#000000</color>
-    <color name="correct_answer">#CBEDBF</color>
-    <color name="wrong_answer">#EDC6BF</color>
-    <color name="almost_answer">#F3F0CA</color>
-    <color name="neutral_answer">#9684B9F4</color>
-    <color name="text_light_color">#DF191818</color>
+    <color name="primaryColor">#0d47a1</color>
+    <color name="primaryLightColor">#5472d3</color>
+    <color name="primaryDarkColor">#002171</color>
+    <color name="secondaryColor">#1565c0</color>
+    <color name="secondaryLightColor">#5e92f3</color>
+    <color name="secondaryDarkColor">#003c8f</color>
+    <color name="primaryTextColor">#555555</color>
+    <color name="secondaryTextColor">#ffffff</color>
+    <color name="textDarkColor">#DF191818</color>
 </resources>

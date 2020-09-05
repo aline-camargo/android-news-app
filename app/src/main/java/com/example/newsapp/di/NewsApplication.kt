@@ -5,6 +5,7 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.example.newsapp.BuildConfig
 import com.example.newsapp.work.RefreshDataWorker
+// import com.example.newsapp.work.RefreshDataWorkerFactory
 import dagger.android.AndroidInjector
 import dagger.android.support.DaggerApplication
 import kotlinx.coroutines.CoroutineScope
@@ -20,6 +21,9 @@ open class NewsApplication : DaggerApplication() {
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
         return DaggerApplicationComponent.factory().create(applicationContext)
     }
+
+//    @Inject
+// //    lateinit var myWorkerFactory: RefreshDataWorkerFactory
 
     override fun onCreate() {
         super.onCreate()
@@ -43,4 +47,13 @@ open class NewsApplication : DaggerApplication() {
             repeatingRequest
         )
     }
+
+//    init {
+//        WorkManager.initialize(
+//            this,
+//            Configuration.Builder()
+//                .setWorkerFactory(myWorkerFactory)
+//                .build()
+//        )
+//    }
 }

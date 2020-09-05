@@ -8,11 +8,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.newsapp.R
 import com.example.newsapp.databinding.MainNewsFragmentBinding
 import dagger.android.support.DaggerFragment
-import kotlinx.android.synthetic.main.main_news_fragment.*
 import javax.inject.Inject
 
 class MainNewsFragment : DaggerFragment() {
@@ -40,13 +40,23 @@ class MainNewsFragment : DaggerFragment() {
         mainNewsViewModel.articles.observe(
             viewLifecycleOwner,
             Observer {
-                rvQuestion.apply {
+                viewDataBinding.articlesRecyclerView.apply {
                     val linearLayout = LinearLayoutManager(context)
                     layoutManager = linearLayout
                     adapter = QuestionFragmentAdapter(it)
                 }
             }
         )
+
+        mainNewsViewModel.clickedFab.observe(
+            viewLifecycleOwner,
+            Observer {
+                val layoutManager = viewDataBinding.articlesRecyclerView.layoutManager
+                layoutManager?.smoothScrollToPosition(viewDataBinding.articlesRecyclerView, null, 0)
+            }
+        )
+
         viewDataBinding.lifecycleOwner = this.viewLifecycleOwner
+        viewDataBinding.viewModel = mainNewsViewModel
     }
 }

@@ -13,6 +13,7 @@ import javax.inject.Singleton
         ApplicationModule::class,
         AndroidSupportInjectionModule::class,
         MainNewsModule::class
+//        ,MyWorkerModule::class
     ]
 )
 interface ApplicationComponent : AndroidInjector<NewsApplication> {

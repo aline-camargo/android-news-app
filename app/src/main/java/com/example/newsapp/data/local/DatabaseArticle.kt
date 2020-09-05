@@ -43,10 +43,10 @@ fun List<DatabaseArticle>.asDomainModel(): List<Article> {
     }
 }
 
-//data class DatabaseSource constructor(
+// data class DatabaseSource constructor(
 //    val id: String,
 //    val name: String
-//)
+// )
 
 // TODO: See how to implement custom class TypeConverter
 // class ObjectConverter {
