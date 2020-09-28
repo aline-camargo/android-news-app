@@ -43,7 +43,10 @@ class MainNewsFragment : DaggerFragment() {
                 viewDataBinding.articlesRecyclerView.apply {
                     val linearLayout = LinearLayoutManager(context)
                     layoutManager = linearLayout
-                    adapter = QuestionFragmentAdapter(it)
+                    adapter = ArticleItemFragmentAdapter(it, ArticleItemListener { article ->
+                        val action = MainNewsFragmentDirections.actionMainNewsFragmentToArticleDetailsFragment(article)
+                        findNavController().navigate(action)
+                    })
                 }
             }
         )

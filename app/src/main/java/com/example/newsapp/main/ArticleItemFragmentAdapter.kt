@@ -7,16 +7,17 @@ import com.example.newsapp.data.Article
 import com.example.newsapp.data.Articles
 import com.example.newsapp.databinding.ArticleItemBinding
 
-class QuestionFragmentAdapter(
-    private val data: Articles
-) : RecyclerView.Adapter<QuestionFragmentAdapter.ViewHolder>() {
+class ArticleItemFragmentAdapter(
+    private val data: Articles,
+    private val clickListener: ArticleItemListener
+) : RecyclerView.Adapter<ArticleItemFragmentAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(data[position])
+        holder.bind(data[position], clickListener)
     }
 
     override fun getItemCount() = data.size
@@ -25,9 +26,11 @@ class QuestionFragmentAdapter(
         RecyclerView.ViewHolder(binding.root) {
 
         fun bind(
-            item: Article
+            item: Article,
+            clickListener: ArticleItemListener
         ) {
             binding.article = item
+            binding.clickListener = clickListener
             binding.executePendingBindings()
         }
 
@@ -42,7 +45,6 @@ class QuestionFragmentAdapter(
     }
 }
 
-// TODO: Implement "onArticleClick"
-// class ClueListener(val clickListener: (correctAnswer: String, userAnswer: String) -> Unit) {
-//    fun onClick(clue: Clue, userAnswer: String) = clickListener(clue.answer, userAnswer)
-// }
+ class ArticleItemListener(val clickListener: (article: Article) -> Unit) {
+    fun onClick(article: Article) = clickListener(article)
+ }

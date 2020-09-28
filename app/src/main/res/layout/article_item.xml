@@ -12,6 +12,10 @@
         <variable
             name="article"
             type="com.example.newsapp.data.Article" />
+
+        <variable
+            name="clickListener"
+            type="com.example.newsapp.main.ArticleItemListener" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -31,13 +35,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/image_height"
                 android:adjustViewBounds="true"
+                android:contentDescription="@string/description_image"
                 android:scaleType="centerCrop"
                 app:layout_constraintBottom_toTopOf="@+id/articleTitle"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:setArticleImage="@{article.urlToImage}"
-                android:contentDescription="@string/description_image"
                 tools:src="@drawable/placeholder" />
 
             <TextView
@@ -59,8 +63,8 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/default_margin_top"
                 android:ellipsize="end"
-                android:maxLines="3"
                 android:fontFamily="@font/roboto_medium"
+                android:maxLines="3"
                 android:textAppearance="?attr/textAppearanceHeadline6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -76,7 +80,7 @@
                 android:fontFamily="@font/roboto_medium"
                 android:gravity="center"
                 android:text="@string/more_info"
-                android:visibility="gone"
+                android:onClick="@{() -> clickListener.onClick(article)}"
                 android:textAppearance="?attr/textAppearanceSubtitle1"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"

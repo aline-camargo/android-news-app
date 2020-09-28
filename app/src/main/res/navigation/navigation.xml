@@ -13,9 +13,21 @@
         <action
             android:id="@+id/action_mainNewsFragment_to_chipFragment"
             app:destination="@id/chipFragment" />
+        <action
+            android:id="@+id/action_mainNewsFragment_to_articleDetailsFragment"
+            app:destination="@id/articleDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/chipFragment"
         android:name="com.example.newsapp.chips.ChipFragment"
         android:label="ChipFragment" />
+    <fragment
+        android:id="@+id/articleDetailsFragment"
+        android:name="com.example.newsapp.articledetails.ArticleDetailsFragment"
+        android:label="Detalhes"
+        tools:layout="@layout/article_details_fragment" >
+        <argument
+            android:name="article"
+            app:argType="com.example.newsapp.data.Article" />
+    </fragment>
 </navigation>

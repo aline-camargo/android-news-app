@@ -13,6 +13,7 @@
         <item name="fontFamily">@font/roboto_medium</item>
         <item name="textAppearanceHeadline6">@style/CustomHeadline6</item>
         <item name="textAppearanceSubtitle1">@style/CustomSubtitle1</item>
+        <item name="textAppearanceBody1">@style/CustomBody1</item>
     </style>
 
     <style name="CustomHeadline6" parent="TextAppearance.MaterialComponents.Headline6">
@@ -23,6 +24,12 @@
     <style name="CustomSubtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
         <item name="android:textColor">@color/primaryLightColor</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CustomBody1" parent="TextAppearance.MaterialComponents.Body1">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textColor">@color/primaryTextColor</item>
     </style>
 
 </resources>
